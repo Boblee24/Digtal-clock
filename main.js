@@ -113,13 +113,16 @@ function setDate(){
     if(dayPosition == 3){
         position = 'rd';
     }
+    if(hour > 12){
+        session = 'PM'
+    }
 
 
     if(format == 12 && hour > 12){
         hour = '0' + (hour - 12)
     }
 
-    currentTime.innerHTML = `<h2>${hour}:${minutes}:${seconds}</h2>`
+    currentTime.innerHTML = `<h2>${hour}:${minutes}:${seconds} ${session}</h2>`
     currentDate.innerHTML = `<h3>${day}, ${month} ${dayNumber}${position} ${year}. `
 }
 setDate()
